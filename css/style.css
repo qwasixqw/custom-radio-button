@@ -1,0 +1,73 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+.wrapper {
+}
+.wrapper__container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+.wrapper__title {
+	font-size: 56px;
+	text-align: center;
+	margin-bottom: 50px;
+}
+.wrapper__select-category {
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.wrapper__radio-form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.wrapper__label {
+	cursor: pointer;
+	font-size: 24px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	cursor: pointer;
+}
+
+.wrapper__radio-button {
+	width: 0;
+	height: 0;
+	position: absolute;
+	opacity: 0;
+	z-index: -1;
+}
+
+.wrapper__radio-button:checked + .wrapper__custom-radio::before {
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.wrapper__custom-radio {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-color: white;
+	border-radius: 50%;
+	border: 2px solid #7e9bbd;
+	position: relative;
+	transition: all 0.2s ease;
+}
+
+.wrapper__custom-radio::before {
+	content: '';
+	display: block;
+	width: 10px;
+	height: 10px;
+	background-color: blue;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transition: all 0.2s ease;
+	transform: translate(-50%, -50%) scale(0);
+}
